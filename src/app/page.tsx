@@ -1,52 +1,43 @@
-import Image from "next/image";
+import { Box, Button, Container, Flex, Heading, HStack, Stack, Text } from "@chakra-ui/react";
 
 export default function Home() {
 	return (
-		<div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-			<main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-				<Image className="dark:invert" src="/next.svg" alt="Next.js logo" width={180} height={38} priority />
-				<ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-					<li className="mb-2 tracking-[-.01em]">
-						Get started by editing{" "}
-						<code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-							src/app/page.tsx
-						</code>
-						.
-					</li>
-					<li className="tracking-[-.01em]">Save and see your changes instantly.</li>
-				</ol>
+		<Box minH="100vh" bg="#070C18" color="white">
+			<Container maxW="7xl" px={{ base: 6, md: 10 }} py={{ base: 8, md: 10 }}>
+				<Stack gap={{ base: 14, md: 20 }}>
+					<Flex align="center" justify="space-between" wrap="wrap" gap={4}>
+						<Text fontSize="xl" fontWeight="semibold">
+							Frameflow
+						</Text>
+						<HStack gap={3}>
+							<Button asChild variant="outline" borderColor="whiteAlpha.500" _hover={{ bg: "whiteAlpha.100" }}>
+								<a href="/login">Sign in</a>
+							</Button>
+							<Button asChild colorPalette="blue">
+								<a href="/app">Open app</a>
+							</Button>
+						</HStack>
+					</Flex>
 
-				<div className="flex gap-4 items-center flex-col sm:flex-row">
-					<a
-						className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-						href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Read our docs
-					</a>
-				</div>
-			</main>
-			<footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-				<a
-					className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-					href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<Image aria-hidden src="/file.svg" alt="File icon" width={16} height={16} />
-					Learn
-				</a>
-				<a
-					className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-					href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<Image aria-hidden src="/globe.svg" alt="Globe icon" width={16} height={16} />
-					Go to nextjs.org →
-				</a>
-			</footer>
-		</div>
+					<Stack gap={6} maxW="4xl">
+						<Heading as="h1" fontSize={{ base: "4xl", md: "6xl" }} lineHeight={{ base: 1.1, md: 1.05 }}>
+							Collaborative review workspace for creative projects.
+						</Heading>
+						<Text color="whiteAlpha.800" fontSize={{ base: "lg", md: "xl" }}>
+							Upload files, track reviews, and manage project workflows in one place. Sign in to access your protected project CRUD
+							dashboard.
+						</Text>
+						<HStack gap={4} flexWrap="wrap">
+							<Button asChild colorPalette="blue" size="lg" px={8}>
+								<a href="/app">Go to app</a>
+							</Button>
+							<Button asChild size="lg" variant="outline" borderColor="whiteAlpha.600" color="white" _hover={{ bg: "whiteAlpha.100" }} px={8}>
+								<a href="/login">Login</a>
+							</Button>
+						</HStack>
+					</Stack>
+				</Stack>
+			</Container>
+		</Box>
 	);
 }
