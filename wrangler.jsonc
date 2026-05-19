@@ -8,9 +8,9 @@
  */
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "review-frontend",
+	"name": "wild-hat-67c6",
 	"main": ".open-next/worker.js",
-	"compatibility_date": "2026-05-05",
+	"compatibility_date": "2026-05-19",
 	"compatibility_flags": [
 		"nodejs_compat",
 		"global_fetch_strictly_public"
@@ -29,7 +29,7 @@
 			// Self-reference service binding, the service name must match the worker name
 			// see https://opennext.js.org/cloudflare/caching
 			"binding": "WORKER_SELF_REFERENCE",
-			"service": "review-frontend"
+			"service": "wild-hat-67c6"
 		}
 	],
 	"observability": {
